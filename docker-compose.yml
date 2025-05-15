@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+
+  odoo18:
+    image: odoo:18.0
+    
+    container_name: odoo18
+    restart: unless-stopped
+    links:
+      - db:db   
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./srv/odoo17-data:/var/lib/odoo
+      - ./srv/config:/etc/odoo
+      - ./srv/addons:/mnt/extra-addons
+    networks:
+      - odoo18
+
+
+  db:
+    image: postgres:14.0
+    container_name: db
+    restart: unless-stopped       
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - odoo18
+
+
+volumes:
+  odoo18-data:
+  db18-data:  
+networks:
+  odoo18:

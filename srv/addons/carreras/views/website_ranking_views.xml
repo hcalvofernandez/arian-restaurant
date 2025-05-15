@@ -1,0 +1,27 @@
+<odoo>
+    <template id="ranking_template" name="Ranking">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Ranking General</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="partners" t-as="partner">
+                            <tr>
+                                <td><t t-esc="partner.position"/></td>
+                                <td><t t-esc="partner.name"/></td>
+                                <td><t t-esc="partner.points"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
