@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
 
-  odoo18:
-    image: odoo:18.0
+  odoo17:
+    image: odoo:17.0
     
     container_name: odoo18
     restart: unless-stopped
@@ -18,11 +18,11 @@ services:
       - ./srv/config:/etc/odoo
       - ./srv/addons:/mnt/extra-addons
     networks:
-      - odoo18
+      - odoo17
 
 
   db:
-    image: postgres:14.0
+    image: postgres:17.0
     container_name: db
     restart: unless-stopped       
     environment:
@@ -33,11 +33,11 @@ services:
     volumes:
       - ./postgres:/var/lib/postgresql/data
     networks:
-      - odoo18
+      - odoo17
 
 
 volumes:
-  odoo18-data:
-  db18-data:  
+  odoo17-data:
+  db17-data:  
 networks:
-  odoo18:
+  odoo17:
