@@ -17,7 +17,7 @@ services:
       - odoo17
 
   db:
-    image: postgres:14.0
+    image: postgres:17.0
     container_name: db
     restart: unless-stopped       
     environment:
