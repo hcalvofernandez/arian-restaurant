@@ -1,10 +1,6 @@
-version: '3.3'
-
 services:
-
   odoo17:
     image: odoo:17.0
-    
     container_name: odoo17
     restart: unless-stopped
     links:
@@ -14,12 +10,11 @@ services:
     ports:
       - "80:8069"
     volumes:
-      - ./srv/odoo17-data:/var/lib/odoo
+      - odoo17-data:/var/lib/odoo
       - ./srv/config:/etc/odoo
       - ./srv/addons:/mnt/extra-addons
     networks:
       - odoo17
-
 
   db:
     image: postgres:17.0
@@ -31,10 +26,9 @@ services:
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - db17-data:/var/lib/postgresql/data
     networks:
       - odoo17
-
 
 volumes:
   odoo17-data:
