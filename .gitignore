@@ -400,5 +400,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# directorios de BD 
+# directorios de locales y BD 
 /postgres
+./srv/odoo17-data
