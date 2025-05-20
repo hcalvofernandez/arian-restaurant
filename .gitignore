@@ -401,5 +401,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # directorios de BD 
-/Postgres
-
+/postgres
