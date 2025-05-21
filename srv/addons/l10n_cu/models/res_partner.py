@@ -10,14 +10,13 @@ class ResCnae(models.Model):
     _rec_name = "complete_name"
     _order = "code"
 
-    def name_get(self):
-        return [(record.id, "%s - %s" % (record.code, record.name)) for record in self]
-
     code = fields.Char()
     name = fields.Char()
     industry_id = fields.Many2one("res.partner.industry", "Sector")
-
     complete_name = fields.Char('Complete Name', compute='_compute_complete_name', store=True)
+
+    def name_get(self):
+        return [(record.id, "%s - %s" % (record.code, record.name)) for record in self]
 
     @api.depends('code', 'name')
     def _compute_complete_name(self):
@@ -30,12 +29,12 @@ class ResCnaeLine(models.Model):
     _description = "CNAE Line"
     _sql_constraints = [
         ('check_cnae_id', 'unique(partner_id, cnae_id)',
-         'Las actividades economicas deben ser unicas.!')
+         'Las actividades económicas deben ser únicas.!')
     ]
 
     sequence = fields.Integer('Sequence', default=1,
                               help="Usado para organizar las actividades. La Actividad Principal será la de primer orden.")
-    cnae_id = fields.Many2one("res.cnae", "Clasificador Nacional de Activdades Económicas", required=True)
+    cnae_id = fields.Many2one("res.cnae", "Clasificador Nacional de Actividades Económicas", required=True)
     partner_id = fields.Many2one("res.partner", "Partner", required=True)
 
 

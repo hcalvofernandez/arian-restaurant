@@ -12,7 +12,6 @@
                         <field name="cnae_id" options="{'no_create': True}"/>
                     </tree>
                 </field>
-                <field name="industry_id" position="move"/>
             </field>
         </field>
     </record>

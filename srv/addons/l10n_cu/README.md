@@ -1,2 +1,4 @@
 # localizacion_cubana
-localizacion cubana para odoo 14
+localizacion cubana para odoo 17
+
+## revision mayo 2025

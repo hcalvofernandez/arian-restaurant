@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--Kitchen screen menu item    -->
+    <!-- Menú raíz bajo el menú de Punto de Venta -->
     <menuitem id="pos_kitchen_screen_menu_root"
               name="Pos kitchen screen"
               parent="point_of_sale.menu_point_root"
               sequence="10"/>
 
+    <!-- Menú de acción para la pantalla de cocina -->
     <menuitem id="pos_kitchen_screen_menu_action"
               name="Pos kitchen screen"
               parent="pos_kitchen_screen_menu_root"

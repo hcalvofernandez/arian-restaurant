@@ -11,15 +11,20 @@
 # hcalvofernandez (scnetisla@gmail.com)
 
 {
-    "name": "Cuba - Localización Contable",
-    "version": "17.0.1.0.0",
-    "category": "Localization",
-    "summary": "Plan contable y localización para Cuba",
-    "depends": [
-        "account",
-        "base_iban",
-        "om_account_accountant",  # Odoo Mate
-        # otros módulos OM si los usas
+    'name': 'Cuba - Contabilidad',
+    'version': '17.0.5.1.1',
+    'author': 'Idola Odoo Team, Comunidad cubana de Odoo, ConLeyet SRL ',
+    'category': 'Accounting/Localizations/Account Charts',
+    'description': """
+        Cuban charts of accounts.
+            * Defines the following chart of account templates:
+                * Cuban general chart of accounts by 494/2016 modified by 407/2019
+                * Cuban general chart of accounts for Actividad Empresarial
+                * Cuban general chart of accounts for Unidades Presupuestadas de Tratamiento Especial 
+                * Cuban general chart of accounts for Sector Cooperativo Agropecuario y no Agropecuario"
+    """,
+    'depends': [
+        'account',
     ],
     'data': [
         'data/account_chart_data.xml',        
