@@ -402,4 +402,4 @@ FodyWeavers.xsd
 
 # directorios de locales y BD 
 /postgres
-./srv/odoo17-data/*
+/srv/odoo17-data/*
