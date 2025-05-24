@@ -1,4 +1,21 @@
 services:
+  reverse-proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    environment:
+      DISABLE_IPV6: 'true'
+      X_FRAME_OPTIONS: "sameorigin"
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - odoo17
+      - proxy
+  
   odoo17:
     image: odoo:17.0
     container_name: odoo17
@@ -8,7 +25,7 @@ services:
     depends_on:
       - db
     ports:
-      - "80:8069"
+      - "8069:8069"
     volumes:
       - ./srv/odoo17-data:/var/lib/odoo
       - ./srv/config:/etc/odoo
@@ -32,3 +49,5 @@ services:
 
 networks:
   odoo17:
+  proxy:
+    external: true
