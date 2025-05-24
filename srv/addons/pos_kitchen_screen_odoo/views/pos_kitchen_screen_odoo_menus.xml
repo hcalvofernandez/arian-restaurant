@@ -2,13 +2,13 @@
 <odoo>
     <!-- Menú raíz bajo el menú de Punto de Venta -->
     <menuitem id="pos_kitchen_screen_menu_root"
-              name="Pos kitchen screen"
+              name="Pantalla de Cocina"
               parent="point_of_sale.menu_point_root"
               sequence="10"/>
 
     <!-- Menú de acción para la pantalla de cocina -->
     <menuitem id="pos_kitchen_screen_menu_action"
-              name="Pos kitchen screen"
+              name="Pantalla de Cocina"
               parent="pos_kitchen_screen_menu_root"
               action="kitchen_screen_action"
               sequence="10"/>

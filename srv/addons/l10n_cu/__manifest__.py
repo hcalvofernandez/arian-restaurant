@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 # List of contributors:
@@ -13,7 +12,7 @@
 {
     'name': 'Cuba - Contabilidad',
     'version': '17.0.5.1.1',
-    'author': 'Idola Odoo Team, Comunidad cubana de Odoo, ConLeyet SRL ',
+    'author': 'Conleyet SRL, Comunidad cubana de Odoo, ConLeyet SRL ',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
         Cuban charts of accounts.
@@ -24,7 +23,7 @@
                 * Cuban general chart of accounts for Sector Cooperativo Agropecuario y no Agropecuario"
     """,
     'depends': [
-        'account',
+        'om_account_accountant',
     ],
     'data': [
         'data/account_chart_data.xml',        

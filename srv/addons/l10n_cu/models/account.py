@@ -37,7 +37,7 @@ class AccountAccountTag(models.Model):
     ])
 
 
-class AccountChartTemplate(models.Model):
+class AccountChartTemplate(models.AbstractModel):
     _inherit = "account.chart.template"
 
     def _create_records_with_xmlid(self, model, template_vals, company):

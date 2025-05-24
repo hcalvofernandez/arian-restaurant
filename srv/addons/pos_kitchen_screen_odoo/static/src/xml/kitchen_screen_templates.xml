@@ -3,6 +3,12 @@
     <!--Template for Kitchen order stages  -->
     <t t-name="KitchenCustomDashBoard">
         <header>
+            <!-- Botón para volver atrás -->
+            <div style="text-align: right; margin: 15px 30px 0 0;">
+                <button class="btn btn-primary" type="button" t-attf-onclick="window.history.back();">
+                    Cerrar Cocina
+                </button>
+            </div>
             <div id="kitchen_screen" class="kitchen">
                 <div class="body_wrapper">
                     <div class="container">
@@ -22,7 +28,7 @@
                                         </div>
                                         <span class="draft draft_stage"
                                               t-on-click="(e) => this.draft_stage(e)">
-                                            Cooking
+                                            Cocinar
                                         </span>
                                         <t t-if="state.draft_count > 0">
                                             <span class="ms-2 px-2 fw-bold rounded kitchen_order_count">
@@ -80,7 +86,7 @@
                                         </div>
                                         <span class="cooking waiting_stage"
                                               t-on-click="(e) => this.waiting_stage(e)">
-                                            Ready
+                                            Listas
                                         </span>
                                         <t t-if="state.waiting_count > 0">
                                             <span class="ms-2 px-2 fw-bold rounded kitchen_order_count">
@@ -121,7 +127,7 @@
                                         </div>
                                         <span class="completed ready_stage"
                                               t-on-click="(e) => this.ready_stage(e)">
-                                            Completed
+                                            Entregadas
                                         </span>
                                         <t t-if="state.ready_count > 0">
                                             <span class="ms-2 px-2 fw-bold rounded kitchen_order_count">
@@ -181,7 +187,7 @@
                                                         </div>
                                                         <div class="status">
                                                             <h4 class="c_white">
-                                                                Completed
+                                                                Entregadas
                                                             </h4>
                                                             <div style="padding: 3px 7px;"
                                                                  class="container-fluid">
@@ -197,7 +203,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Time
+                                                                                Tiempo
                                                                             </span>
                                                                         </b>
                                                                         <span style="font-size: 12px;">
@@ -209,7 +215,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Table
+                                                                                Mesa
                                                                                 :
                                                                             </span>
                                                                         </b>
@@ -220,7 +226,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Floor
+                                                                               Salon
                                                                                 :
                                                                             </span>
                                                                         </b>
@@ -275,7 +281,7 @@
                                                                             t-on-click="(e) => this.accept_order_line(e)"
                                                                             t-attf-id="lines_id_{{line.id}}"
                                                                             t-att-value="line.id">
-                                                                        Ready
+                                                                        Listas
                                                                     </button>
                                                                 </div>
                                                             </t>
@@ -328,7 +334,7 @@
                                                         </div>
                                                         <div class="status">
                                                             <h4 class="c_blue">
-                                                                Ready
+                                                                Listas
                                                             </h4>
                                                             <div style="padding: 3px 7px;"
                                                                  class="container-fluid">
@@ -344,7 +350,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Time
+                                                                                Tiempo
                                                                             </span>
                                                                         </b>
                                                                         <span style="font-size: 12px;">
@@ -356,7 +362,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Table
+                                                                                Mesa
                                                                                 :
                                                                             </span>
                                                                         </b>
@@ -367,8 +373,8 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Floor
-                                                                                :
+                                                                            
+                                                                               Salon :
                                                                             </span>
                                                                         </b>
                                                                         <span style="font-size: 12px;">
@@ -393,14 +399,14 @@
                                                             t-att-value="order.id"
                                                             t-on-click="(e) => this.accept_order(e)"
                                                             type="button">
-                                                        Accept
+                                                        Aceptar
                                                     </button>
                                                     <button class="btn cancel_order btn-primary"
                                                             t-on-click="(e) => this.cancel_order(e)"
                                                             t-attf-id="cancel_order_id_{{order.id}}"
                                                             t-att-value="order.id"
                                                             type="button">
-                                                        Cancel
+                                                        Cancelar
                                                     </button>
                                                 </t>
                                                 <t t-if="order.order_status=='waiting'">
@@ -494,7 +500,7 @@
                                                         </div>
                                                         <div class="status">
                                                             <h4>
-                                                                Cooking
+                                                                Cocinando
                                                             </h4>
                                                             <div style="padding: 3px 7px;"
                                                                  class="container-fluid">
@@ -509,7 +515,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Time
+                                                                                Tiempo
                                                                             </span>
                                                                         </b>
                                                                         <span style="font-size: 12px;">
@@ -521,7 +527,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Table
+                                                                                Mesa
                                                                                 :
                                                                             </span>
                                                                         </b>
@@ -532,7 +538,7 @@
                                                                     <li>
                                                                         <b>
                                                                             <span style="font-size: 12px;">
-                                                                                Floor
+                                                                                Salon
                                                                                 :
                                                                             </span>
                                                                         </b>
@@ -588,14 +594,14 @@
                                                                 t-att-value="order.id"
                                                                 t-on-click="(e) => this.accept_order(e)"
                                                                 type="button">
-                                                            Accept
+                                                            Aceptar
                                                         </button>
                                                         <button class="btn cancel_order btn-secondary"
                                                                 t-on-click="(e) => this.cancel_order(e)"
                                                                 t-attf-id="cancel_order_id_{{order.id}}"
                                                                 t-att-value="order.id"
                                                                 type="button">
-                                                            Cancel
+                                                            Cancelar
                                                         </button>
                                                     </div>
                                                 </t>
@@ -623,7 +629,7 @@
                                                         </div>
                                                         <div class="status">
                                                             <h4>
-                                                                Cooking
+                                                                Cocinando
                                                             </h4>
                                                             <a class="btn btn-transparent mt">
                                                                 <t t-esc="order.name"/>
@@ -631,7 +637,7 @@
                                                             <a class="btn btn-transparent mt "
                                                                style="margin-top: 20px;margin-left: -64px;">
                                                                 <span style="font-size: 12px;">
-                                                                    Time
+                                                                    Tiempo
                                                                 </span>
                                                                 <span style="font-size: 12px;margin-left: 5px;">
                                                                     <t t-esc="order.hour"/>
@@ -643,7 +649,7 @@
                                                                style=" margin-top: 58px;margin-left: -65px;">
                                                                 <t t-if="order.table_id">
                                                                     <span style="font-size: 12px;">
-                                                                        Table :
+                                                                        Mesa :
                                                                     </span>
                                                                     <span style="font-size: 12px;">
                                                                         <t t-esc="order.table_id[1]"/>
@@ -653,7 +659,7 @@
                                                             <a class="btn btn-transparent mt "
                                                                style="margin-top: 83px;margin-left: -45px">
                                                                 <span style="font-size: 12px;">
-                                                                    Floor :
+                                                                   Salon :
                                                                 </span>
                                                                 <span style="font-size: 12px;">
                                                                     <t t-esc="order.floor"/>
@@ -704,14 +710,14 @@
                                                                 t-att-value="order.id"
                                                                 t-on-click="(e) => this.accept_order(e)"
                                                                 type="button">
-                                                            Accept
+                                                            Aceptar
                                                         </button>
                                                         <button class="btn cancel_order btn-secondary"
                                                                 t-on-click="(e) => this.cancel_order(e)"
                                                                 t-attf-id="cancel_order_id_{{order.id}}"
                                                                 t-att-value="order.id"
                                                                 type="button">
-                                                            Cancel
+                                                            Cancelar
                                                         </button>
                                                     </div>
                                                 </t>

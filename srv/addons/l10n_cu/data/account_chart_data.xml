@@ -7,7 +7,7 @@
     <!-- Commmon Chart of Account  -->
     <record id="l10n_cu_chart_template_common" model="account.chart.template">
         <field name="name">Cuba - Plan Contable Común (494/2016 modified by 407/2019)</field>
-        <field name="visible" eval="0"/>
+        <!-- <field name="visible" eval="0"/>  Eliminado para Odoo 17 -->
         <field name="code_digits">3</field>
         <field name="cash_account_code_prefix">101.</field>
         <field name="bank_account_code_prefix">109.</field>
