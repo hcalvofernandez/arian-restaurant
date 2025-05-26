@@ -400,7 +400,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# directorios de locales y BD 
+# directorios de locales y BD
+docker-compose.yml 
 /postgres
 /srv/odoo17-data/*
 /data
